@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Advocates — s—work</title>
+<meta name="description" content="s—work is sex worker owned and operated. Built for safety, built for the community. Partnership enquiries welcome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red:    #E8001C;
+    --pink:   #FF3D7F;
+    --blush:  #DCAFC8;
+    --text:   #09090B;
+    --text-2: #71717A;
+    --text-3: #A1A1AA;
+    --surf:   #F4F4F5;
+    --bord:   #E4E4E7;
+    --white:  #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+    background: var(--white);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Nav ── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--bord);
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+  }
+  .nav-inner {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  .nav-brand {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: var(--red);
+    letter-spacing: -0.03em;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .nav-domain {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-3);
+    margin-left: 10px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 4px;
+    margin-left: 24px;
+  }
+  .nav-link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-2);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 7px;
+    transition: color 0.12s, background 0.12s;
+    white-space: nowrap;
+  }
+  .nav-link:hover { color: var(--text); background: var(--surf); }
+  .nav-link.active { color: var(--text); font-weight: 600; }
+  .nav-login {
+    margin-left: auto;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    padding: 6px 16px;
+    border: 1.5px solid var(--text);
+    border-radius: 999px;
+    transition: background 0.12s, color 0.12s;
+    white-space: nowrap;
+  }
+  .nav-login:hover { background: var(--text); color: var(--white); }
+
+  /* ── Hero ── */
+  .hero {
+    background:
+      linear-gradient(rgba(220,175,200,0.72), rgba(220,175,200,0.72)),
+      url('hero-texture.jpg') center / cover no-repeat;
+    padding: 56px 24px 52px;
+  }
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+    display: block;
+  }
+  .hero h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: clamp(3rem, 9vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--red);
+    margin-bottom: 14px;
+  }
+  .hero-sub {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+    line-height: 1.2;
+    color: var(--text);
+    max-width: 540px;
+    margin-bottom: 28px;
+  }
+  .hero-copy {
+    max-width: 580px;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text);
+  }
+  .hero-copy p + p { margin-top: 14px; }
+
+  /* ── Contact banner ── */
+  .contact-bar {
+    background: var(--text);
+    color: var(--white);
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .contact-bar-text {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+  }
+  .contact-bar a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--pink);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: opacity 0.15s;
+  }
+  .contact-bar a:hover { opacity: 0.88; }
+
+  /* ── Feature list ── */
+  .features {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .feature {
+    padding: 36px 0;
+    border-bottom: 1px solid var(--bord);
+  }
+  .feature:first-child { border-top: 1px solid var(--bord); }
+
+  .feature-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .bullet {
+    color: var(--red);
+    font-size: 1.125rem;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .feature h2 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  .feature-body {
+    padding-left: 32px;
+    font-size: 0.9375rem;
+    line-height: 1.78;
+    color: var(--text-2);
+  }
+  .feature-body p + p { margin-top: 10px; }
+
+  /* ── Pull quote ── */
+  .pull {
+    border-top: 1px solid var(--bord);
+    border-bottom: 1px solid var(--bord);
+    padding: 48px 24px;
+  }
+  .pull-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .pull p {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: clamp(1.25rem, 3.5vw, 1.875rem);
+    line-height: 1.3;
+    color: var(--text);
+    max-width: 640px;
+  }
+  .pull em { color: var(--red); font-style: italic; }
+
+  /* ── CTA section ── */
+  .cta {
+    background:
+      linear-gradient(rgba(220,175,200,0.75), rgba(220,175,200,0.75)),
+      url('hero-texture.jpg') center / cover no-repeat;
+    padding: 56px 24px;
+  }
+  .cta-inner { max-width: 800px; margin: 0 auto; }
+  .cta h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 12px;
+    max-width: 500px;
+  }
+  .cta p {
+    font-size: 0.9375rem;
+    line-height: 1.72;
+    color: var(--text);
+    opacity: 0.75;
+    margin-bottom: 28px;
+    max-width: 520px;
+  }
+  .cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+  .btn-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--text);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 24px;
+    border-radius: 10px;
+    transition: opacity 0.15s;
+  }
+  .btn-email:hover { opacity: 0.82; }
+  .btn-beta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 13px 20px;
+    border-radius: 10px;
+    border: 1.5px solid rgba(9,9,11,0.3);
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .btn-beta:hover { border-color: var(--text); background: rgba(9,9,11,0.05); }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--bord);
+    padding: 32px 24px;
+    background: var(--white);
+  }
+  .footer-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .footer-name {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--text);
+    letter-spacing: -0.03em;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .footer-meta {
+    font-size: 13px;
+    color: var(--text-2);
+  }
+  .footer-meta a {
+    color: var(--text-2);
+    text-decoration: none;
+  }
+  .footer-meta a:hover { color: var(--text); }
+
+  /* ── Responsive ── */
+  @media (max-width: 560px) {
+    .nav { padding: 0 16px; }
+    .nav-domain, .nav-links { display: none; }
+    .hero { padding: 40px 16px 44px; }
+    .features { padding: 0 16px; }
+    .pull, .cta { padding-left: 16px; padding-right: 16px; }
+    footer { padding: 28px 16px; }
+    .contact-bar { padding: 16px; text-align: center; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">s—work</a>
+    <span class="nav-domain">s-work.app</span>
+    <div class="nav-links">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/advocates" class="nav-link active">For Advocates</a>
+    </div>
+    <a href="https://app.s-work.app/login" class="nav-login">Log in</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">For advocates &amp; organisations</span>
+    <h1>Worker-led.</h1>
+    <p class="hero-sub">The essential infrastructure for sex worker rights.</p>
+    <div class="hero-copy">
+      <p>The tools that sex workers rely on to run their businesses were built by people who would prefer they didn't exist. You can feel it in every product decision, and workers pay for it in time, safety, and income.</p>
+      <p>s—work is sex worker owned and operated. We are building the tool that should have existed long before now: a secure, private inbox and client management platform where a worker's safety information, booking history, and communications live in one encrypted place that cannot be taken away by a platform ban.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact bar -->
+<div class="contact-bar">
+  <span class="contact-bar-text">Interested in partnering with us?</span>
+  <a href="mailto:info@s-work.app">
+    <span>Contact the s—work team</span>
+    <span aria-hidden="true">→</span>
+  </a>
+</div>
+
+<!-- Features -->
+<div class="features">
+
+  <div class="feature">
+    <div class="feature-head">
+      <span class="bullet">&#x25CF;</span>
+      <h2>How we help workers be safer</h2>
+    </div>
+    <div class="feature-body">
+      <p>Dangerous client flags are append-only: once a record exists it cannot be silently deleted or edited, only added to. We maintain a shared blacklist within the platform and are open to working with other blacklist holders to connect that information across communities.</p>
+      <p>The built-in check-in system lets a worker set a session timer with a trusted contact. If they haven't checked out when the session ends, that contact is automatically alerted.</p>
+    </div>
+  </div>
+
+  <div class="feature">
+    <div class="feature-head">
+      <span class="bullet">&#x25CF;</span>
+      <h2>How we help workers manage their business</h2>
+    </div>
+    <div class="feature-body">
+      <p>Sex work is a business. Workers deserve to see where their income is coming from, understand what is and isn't working, and make decisions based on their own data rather than guesswork.</p>
+      <p>If you want to maximise what you earn, that is as legitimate a goal as any other and we are building for it. If you want to work less without earning less, same thing — the data helps with that too.</p>
+    </div>
+  </div>
+
+  <div class="feature">
+    <div class="feature-head">
+      <span class="bullet">&#x25CF;</span>
+      <h2>How we work as a community</h2>
+    </div>
+    <div class="feature-body">
+      <p>A worker who spends less time managing fragmented inboxes, whose screening history cannot be destroyed by a platform ban, who controls their own data and uses it to run a better business, has more time and energy for the political and legal work that protects the whole community.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Pull quote -->
+<div class="pull">
+  <div class="pull-inner">
+    <p>Worker-controlled digital infrastructure is a small piece of that, and <em>we intend to build it well.</em></p>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-inner">
+    <h2>Get in touch.</h2>
+    <p>We are actively seeking to partner with agencies, collectives, and advocacy organisations. If your organisation works to advance sex worker rights and safety, we would love to talk. We are also in free beta for individual workers.</p>
+    <div class="cta-actions">
+      <a href="mailto:info@s-work.app" class="btn-email">
+        <span>info@s-work.app</span>
+        <span aria-hidden="true">→</span>
+      </a>
+      <a href="/" class="btn-beta">Join the free beta</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-name">s—work</span>
+    <p class="footer-meta">work tools for sex workers &nbsp;·&nbsp; <a href="mailto:info@s-work.app">info@s-work.app</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
